@@ -3,12 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "type": "module",
   "scripts": {
     "dev": "nodemon app.js",
     "start": "nomde app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
-    
   },
   "repository": {
     "type": "git",
@@ -22,8 +20,14 @@
   },
   "homepage": "https://github.com/EuripedesNaves/spellseeker-server#readme",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
     "express": "^4.18.2",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.7.3",
     "mongose": "^0.0.2-security",
+    "morgan": "^1.10.0",
     "nodemon": "^2.0.20"
   }
 }
