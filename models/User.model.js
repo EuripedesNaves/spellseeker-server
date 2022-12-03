@@ -1,4 +1,4 @@
-const {Schema, model} = require ('mongoose')
+const {Schema, model} = require('mongoose');
 
 const userSchema = new Schema ({
     email:{
@@ -13,9 +13,13 @@ const userSchema = new Schema ({
         type: String,
         required: [true, 'Password is required'],
     },
+    passwordHash: {
+        type: String,
+        required: [true, 'PasswordHash is required'],
+    },
     name: {
         type: String,
-        required: [true, 'Name is required']
+        required: [true, 'Name is required'],
     },
 }, { timestamps: true})
 

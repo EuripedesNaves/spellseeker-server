@@ -4,7 +4,7 @@ const PORT = 5005
 
 require('./db/index.js')
 
-const authRoute = require('./auth.routes.js');
+const authRoute = require('./routes/auth.routes.js');
 
 const app = express();
 app.use(express.json())
