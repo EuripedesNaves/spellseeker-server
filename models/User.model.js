@@ -1,13 +1,13 @@
-const {Schema, model} = require('mongoose');
+const { Schema, model } = require('mongoose');
 
-const userSchema = new Schema ({
-    email:{
+const userSchema = new Schema({
+    email: {
         type: String,
         required: [true, 'Email is required'],
         unique: true,
         lowercase: true,
         trim: true,
-        match: /[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/, 
+        match: /[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/,
     },
     password: {
         type: String,
@@ -21,6 +21,6 @@ const userSchema = new Schema ({
         type: String,
         required: [true, 'Name is required'],
     },
-}, { timestamps: true})
+}, { timestamps: true })
 
 module.exports = model('User', userSchema)

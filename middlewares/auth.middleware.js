@@ -2,8 +2,6 @@
 const jwt = require('jsonwebtoken');
 
 
-
-
 const auth = (req, res, next) => {
     const token = req.get('Authorization');
 
@@ -14,10 +12,10 @@ const auth = (req, res, next) => {
     const tokenNoBearer = token.split('')[1];
     try {
         const decodedToken = jwt.verify(tokenNoBearer, process.env.JWT_SECRET);
-        req.user = {...decodedToken};
+        req.user = { ...decodedToken };
         next()
     } catch (error) {
-        res.status(401).json({message: error.message});
+        res.status(401).json({ message: error.message });
 
     }
 }
