@@ -1,8 +1,6 @@
 //Environment 
 require("dotenv").config();
 
-
-
 const express = require('express');
 const logger = require('morgan');
 const cors = require('cors');
@@ -14,8 +12,6 @@ const app = express();
 require('./db/index.js');
 
 // Conexões de outras origens
-
-// usando lib e liberando para qualquer dominio
 app.use(cors())
 
 //Em desenvolvimento show app logs
@@ -46,6 +42,8 @@ app.use(require('./middlewares/auth.middleware.js'));
 //Rotas Particulares
 
 
+//Configuração de erro
+require('./error-handling')(app)
 
 //listen
 app.listen(process.env.PORT, () => {
