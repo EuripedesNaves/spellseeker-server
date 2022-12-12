@@ -1,4 +1,5 @@
-import {Schema, model} from 'mongoose'
+const { Schema, model } = require('mongoose');
+
 
 const deckSchema = new Schema({
     name:{
@@ -29,6 +30,5 @@ const deckSchema = new Schema({
 
 }, {timestemp: true})
 
-const Deck = model('Deck', deckSchema);
 
-export default Deck;
+module.exports = model('Deck', deckSchema);

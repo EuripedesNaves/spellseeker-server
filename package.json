@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/EuripedesNaves/spellseeker-server#readme",
   "dependencies": {
+    "apt": "^0.0.2",
     "axios": "^1.2.0",
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
@@ -29,6 +30,8 @@
     "mongoose": "^6.7.3",
     "mongose": "^0.0.2-security",
     "morgan": "^1.10.0",
-    "nodemon": "^2.0.20"
+    "mtgsdk": "^1.0.0",
+    "nodemon": "^2.0.20",
+    "uuid": "^9.0.0"
   }
 }

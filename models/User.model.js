@@ -9,13 +9,9 @@ const userSchema = new Schema({
         trim: true,
         match: /[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/,
     },
-    password: {
-        type: String,
-        required: [true, 'Password is required'],
-    },
     passwordHash: {
         type: String,
-        required: [true, 'PasswordHash is required'],
+        required: [true, 'Password is required'],
     },
     name: {
         type: String,
