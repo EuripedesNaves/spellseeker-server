@@ -40,11 +40,12 @@ router.post('/register', async (req, res, next) => {
         const salt = bcrypt.genSaltSync(10);
         const passwordHash = bcrypt.hashSync(password, salt);
 
-        const createdUser = await User.create({ name, email, passwordHash });
+        const createdUser = await User.create({ name, email, password, passwordHash });
 
-        let(_id) = createdUser;
+        const { _id } = createdUser;
 
-        res.status(201).json({ _id });
+        res.status(201).json({ email, name, _id })
+
     } catch (error) {
         next(error)
     }

@@ -27,12 +27,12 @@ app.use(express.json())
 
 //Rotas Públicas
 app.use('/', authRoute);
-app.use('/', card);
 
 //Middleware
 app.use(require('./middlewares/auth.middleware.js'));
 
 //Rotas Particulares
+app.use('/', card);
 
 //Configuração de erro
 require('./error-handling')(app)
