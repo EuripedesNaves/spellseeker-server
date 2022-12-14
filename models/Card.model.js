@@ -17,19 +17,7 @@ const cardSchema = new Schema({
         type: String,
     },
     types:{
-        type: String,
-    },
-    subTypes:{
         type: [ String ],
-    },
-    rarity:{
-        type: String,
-    },
-    set:{
-        type: String,
-    },
-    setName:{
-        type: String,
     },
     text:{
         type: String,
@@ -37,18 +25,16 @@ const cardSchema = new Schema({
     imageUrl:{
         type: String,
     },
-    legalities:{
-        type: [ String ],
-    },
-    id:{
+    externalId:{
         type: String,
     },
-    idSpellseeker:{
-        type: String,
-    },
-    commander:{
-        type: Boolean,
+    deckId:{
+        type: Schema.Types.ObjectId,
+        ref: "Deck"
     }
+   
+    //Quantidade de cartas
+
 
 }, {timestamps: true})
 

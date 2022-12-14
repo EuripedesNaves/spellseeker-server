@@ -42,9 +42,9 @@ router.post('/register', async (req, res, next) => {
 
         const createdUser = await User.create({ name, email, passwordHash });
 
-        let(_id) = createdUser;
+        const { _id } = createdUser;
 
-        res.status(201).json({ _id });
+        res.status(201).json({ email, name, _id })
     } catch (error) {
         next(error)
     }

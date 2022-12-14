@@ -6,7 +6,7 @@ const deckSchema = new Schema({
         type: String,
         required: [true, 'card name is required']
     },
-    manaCost:{
+ /*   manaCost:{
         type: String,
     },
     color:{
@@ -26,7 +26,8 @@ const deckSchema = new Schema({
     },
     commander:{
         type: String,
-    }
+    }  
+*/
 
 }, {timestemp: true})
 
