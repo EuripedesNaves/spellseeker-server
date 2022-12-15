@@ -18,6 +18,11 @@ const userSchema = new Schema(
       type: String,
       required: [true, 'Name is required'],
     },
+    idDecksInUser: [{
+      type: Schema.Types.ObjectId,
+      ref:"Deck"
+    }]
+    
   },
   { timestamps: true }
 )

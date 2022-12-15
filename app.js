@@ -6,6 +6,8 @@ const logger = require('morgan');
 const cors = require('cors');
 const authRoute = require('./routes/auth.routes.js');
 const card = require('./routes/card.routes.js');
+const deck = require('./routes/deck.routes.js');
+const publicSearchCard = require('./routes/publicCard.routes.js')
 
 const app = express();
 
@@ -27,12 +29,14 @@ app.use(express.json())
 
 //Rotas Públicas
 app.use('/', authRoute);
-app.use('/', card);
+app.use('/', publicSearchCard);
 
 //Middleware
 app.use(require('./middlewares/auth.middleware.js'));
 
 //Rotas Particulares
+app.use('/', deck);
+app.use('/', card);
 
 //Configuração de erro
 require('./error-handling')(app)

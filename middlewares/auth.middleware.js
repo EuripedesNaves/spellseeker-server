@@ -9,7 +9,7 @@ const auth = (req, res, next) => {
         res.status(401).json({ message: 'Request without token' })
     }
 
-    const tokenNoBearer = token.split('')[1];
+    const tokenNoBearer = token.split(' ')[1];
     try {
         const decodedToken = jwt.verify(tokenNoBearer, process.env.JWT_SECRET);
         req.user = { ...decodedToken };
