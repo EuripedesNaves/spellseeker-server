@@ -25,9 +25,6 @@ const cardSchema = new Schema({
     imageUrl:{
         type: String,
     },
-    externalId:{
-        type: String,
-    },
     deckId:{
         type: Schema.Types.ObjectId,
         ref: "Deck"

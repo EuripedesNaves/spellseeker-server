@@ -38,20 +38,19 @@ router.post('/createCard/:deckId', async (req, res, next) => {
         //Checando se o usuário é dono desse deck
         let { id } = req.user;
         console.log(id, (deck.idUserInDeck).toString())
-        if (userId !== (deck.idUserInDeck).toString()) {
+
+        if (id !== (deck.idUserInDeck).toString()) {
             return res.status(404).json({ message: 'Its not your deck' })
         }
 
         //Salvando a carta
-
         const { cardName } = req.body;
 
         const [result] = await mtg.card.where({ name: cardName })
-        console.log('resultado da pesquisa de carta:', result)
 
-        const { name, manaCost, cmc, colors, types, text, imageUrl, id } = result
+        const { name, manaCost, cmc, colors, types, text, imageUrl } = result
 
-        const newCard = await Card.create({ name, manaCost, cmc, colors, types, text, imageUrl, externalId: id, deckId })
+        const newCard = await Card.create({ name, manaCost, cmc, colors, types, text, imageUrl, deckId })
         res.status(201).json(newCard);
 
 
