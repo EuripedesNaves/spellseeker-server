@@ -15,7 +15,7 @@ const app = express();
 require('./db/index.js');
 
 
-// Conexões de outras origens
+// Conexões de outras origens - Add
 app.use(cors())
 
 
