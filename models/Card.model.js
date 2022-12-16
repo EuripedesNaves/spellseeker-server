@@ -30,7 +30,7 @@ const cardSchema = new Schema({
         ref: "Deck"
     }
    
-    //Quantidade de cartas
+    //Quantidade de cartas - A
 
 
 }, {timestamps: true})
